@@ -15,18 +15,23 @@
       "extensions": ["James-Yu.latex-workshop", "tomoki1207.pdf"],
       "settings": {
         // latexビルド時の不要なファイルを削除
-        "latex-workshop.latex.autoClean.run": "onBuilt",
+        // "latex-workshop.latex.autoClean.run": "onBuilt",
         "latex-workshop.latex.autoBuild.run": "onFileChange",
         "latex-workshop.latex.clean.fileTypes": [
           "*.aux", "*.bbl", "*.blg", "*.idx", "*.ind", "*.lof", "*.lot", "*.out", "*.toc", "*.acn", "*.acr", "*.alg", "*.glg", "*.glo", "*.gls", "*.ist", "*.fls", "*.log", "*.fdb_latexmk", "*.synctex.gz",
-          "_minted*", "*.nav", "*.snm", "*.vrb", "*.dvi"
+          "_minted*", "*.nav", "*.snm", "*.vrb"
         ],
 
         "latex-workshop.latex.tools": [
           {
             "name": "latexmk",
             "command": "latexmk",
-            "args": ["%DOC%"],
+            "args": [
+              "-pdfdvi",
+              "-interaction=nonstopmode",
+              "-synctex=1",
+              "%DOC%"
+            ],
             "env": {}
           }
         ],
