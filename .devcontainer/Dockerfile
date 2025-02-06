@@ -4,7 +4,7 @@ RUN tlmgr update --self
 RUN tlmgr install algorithms algorithmicx algpseudocodex
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-  git \
+  git ssh \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 CMD [ "bin/bash" ]
